@@ -17,16 +17,13 @@ const NavigationSidebar = () => {
     <Link to="/profile" className={`list-group-item ${active === 'profile'?'active':''}`}>
       <i className="bi bi-person"></i> Profile
     </Link>
-<<<<<<< HEAD
-  </div>
-  );
-=======
     <Link to="/blogs" className={`list-group-item ${active === 'blogs'?'active':''}`}>
       <i className="bi bi-bookmark-star"/> Blog
     </Link>
+  </div>
+  );
 
-  </div>);
->>>>>>> 305f540 (blog)
+
 };
 export default NavigationSidebar;
 
