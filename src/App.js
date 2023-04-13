@@ -16,16 +16,29 @@ import EditProfileComponent from "./profiles/edit-profile";
 import HomePage from "./home";
 import CurrentUser from "./users/current-user";
 import TopNavigationBar from "./home/top-navigation-bar";
+<<<<<<< HEAD
 import welcomeRecentNewUsersReducer
   from "./home/welcome/welcome-recent-new-users-reducer";
 import followsReducer from "./follows/follows-reducer";
+=======
+import welcomeRecentNewUsersReducer from "./home/welcome/welcome-recent-new-users-reducer";
+import BlogPage from "./blog";
+// import followsReducer from "./follows/follows-reducer";
+import blogsReducer from "./services/blogs-reducer";
+
+>>>>>>> 305f540 (blog)
 
 
 const store = configureStore({
   reducer: {
     users: usersReducer,
     welcomeUsers: welcomeRecentNewUsersReducer,
+<<<<<<< HEAD
     follows:followsReducer
+=======
+    // follows:followsReducer
+    blogs: blogsReducer,
+>>>>>>> 305f540 (blog)
   }
 })
 
@@ -49,7 +62,12 @@ function App() {
               <Route path="/register/gold" element={<GoldRegister/>}/>
               <Route path="/register/admin" element={<AdminRegister/>}/>
               <Route path="/login" element={<Login/>}/>
+<<<<<<< HEAD
               <Route path="edit-profile" element={<EditProfileComponent/>}/>
+=======
+              <Route path="/blogs" element={<BlogPage/>}/>
+              {/*<Route path="edit-profile" element={<EditProfileComponent/>}/>*/}
+>>>>>>> 305f540 (blog)
             </Routes>
           </CurrentUser>
         </div>
