@@ -16,9 +16,10 @@ import Login from "./users/login";
 import HomePage from "./home";
 import CurrentUser from "./users/current-user";
 import TopNavigationBar from "./home/top-navigation-bar";
-import welcomeRecentNewUsersReducer
-  from "./home/welcome/welcome-recent-new-users-reducer";
+import welcomeRecentNewUsersReducer from "./home/welcome/welcome-recent-new-users-reducer";
+import BlogPage from "./blog";
 // import followsReducer from "./follows/follows-reducer";
+import blogsReducer from "./services/blogs-reducer";
 
 
 
@@ -27,6 +28,7 @@ const store = configureStore({
     users: usersReducer,
     welcomeUsers: welcomeRecentNewUsersReducer,
     // follows:followsReducer
+    blogs: blogsReducer,
   }
 })
 
@@ -50,6 +52,7 @@ function App() {
               <Route path="/register/gold" element={<GoldRegister/>}/>
               <Route path="/register/admin" element={<AdminRegister/>}/>
               <Route path="/login" element={<Login/>}/>
+              <Route path="/blogs" element={<BlogPage/>}/>
               {/*<Route path="edit-profile" element={<EditProfileComponent/>}/>*/}
             </Routes>
           </CurrentUser>
