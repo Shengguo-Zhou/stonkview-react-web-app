@@ -6,7 +6,7 @@ const BLOGS_API = 'http://localhost:4000/blogs';
 // const TUITS_API = `${API_BASE}/tuits`;
 
 export const findBlogs = async () => {
-  const response = await axios.get(BLOGS_API) ;
+  const response = await axios.get(BLOGS_API);
   const blogs = response.data;
   return blogs;
 }

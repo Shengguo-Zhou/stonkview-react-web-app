@@ -1,18 +1,22 @@
 import React, {useState} from "react";
 import {createBlogThunk} from "../services/blogs-thunks";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 const BlogContent = () => {
   let [newContent, setNewContent] = useState('');
+  const { currentUser } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const blogClickHandler = () => {
-    const newBlog = { blog: newContent }
+    const newBlog = {
+      content: newContent,
+      blogUsername: currentUser.username,
+    }
     dispatch(createBlogThunk(newBlog));
   }
   return (
       <div className="row">
         <div className="col-auto">
-          <img src={"../home/logo.webp"} width={60}/>
+          <h1>{currentUser.username}</h1>
         </div>
         <div className="col-10">
        <textarea value={newContent} placeholder="Wants to share somthing...?"

@@ -7,6 +7,7 @@ const blogsReducer = createSlice({
   initialState: {
     loading: false,
     blogs: [],
+    error: null,
   },
   reducers: {},
 

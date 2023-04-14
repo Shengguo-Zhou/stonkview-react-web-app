@@ -5,6 +5,7 @@ import {findBlogsThunk} from "../services/blogs-thunks";
 const BlogList = () => {
   const {blogs, loading} = useSelector(state => state.blogs)
   const dispatch = useDispatch();
+  // const blogArray = Object.values(blogs);
   useEffect(() => { dispatch(findBlogsThunk())}, [])
 
   return(
@@ -17,13 +18,13 @@ const BlogList = () => {
               </li>
           }
           {
-            blogs.map(blog => {
-              return(
-                  <li className={"list-group-item"}>
-                    {blog.content}
-                  </li>
-              );
-            })
+              blogs && blogs.map((blog, index) => {
+                return (
+                    <li key={index} className={"list-group-item"}>
+                      {blog.blogUsername}: {blog.content}
+                    </li>
+                );
+              })
           }
         </ul>
       </>

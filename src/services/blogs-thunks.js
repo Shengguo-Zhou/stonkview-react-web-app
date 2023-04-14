@@ -2,7 +2,9 @@ import {createAsyncThunk} from "@reduxjs/toolkit"
 import * as service from "./blogs-service"
 
 export const findBlogsThunk = createAsyncThunk(
-    'blogs/findBlogs', async () => await service.findBlogs()
+    'blogs/findBlogs', async () => {
+      await service.findBlogs()
+    }
 )
 
 export const deleteBlogThunk = createAsyncThunk(
