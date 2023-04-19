@@ -1,9 +1,7 @@
-// import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import usersReducer from "./users/users-reducer"
-import {configureStore} from "@reduxjs/toolkit";
-import {Provider, useSelector} from "react-redux";
-import {Routes, Route} from "react-router";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider, useSelector } from "react-redux";
+import { Routes, Route } from "react-router";
 import Profile from "./profiles";
 import OthersProfiles from "./profiles/profile-other";
 import AdminControlledUserList from "./users";
@@ -29,43 +27,40 @@ const store = configureStore({
   reducer: {
     users: usersReducer,
     welcomeUsers: welcomeRecentNewUsersReducer,
-    follows:followsReducer,
+    follows: followsReducer,
     singlestock: stockReducer,
     reviews: reviewsReducer,
   }
 })
 
-
-
-
 function App() {
   return (
-      <Provider store={store}>
-        <div className="container">
-          <CurrentUser>
-            <TopNavigationBar/>
-            <Routes>
-              <Route path="/" element={<HomePage/>}/>
-              <Route path="/profile" element={<Profile/>}/>
-              <Route path="/profile/:uid" element={<OthersProfiles/>}/>
-              <Route path="/other" element={<OthersProfiles/>}/>
-              <Route path="/users" element={<AdminControlledUserList/>}/>
-              <Route path="/register" element={<RegisterMainPage/>}/>
-              <Route path="/register/bronze" element={<BronzeRegister/>}/>
-              <Route path="/register/gold" element={<GoldRegister/>}/>
-              <Route path="/register/admin" element={<AdminRegister/>}/>
-              <Route path="/login" element={<Login/>}/>
-              <Route path="edit-profile" element={<EditProfileComponent/>}/>
-              <Route path="/wsb" element={<WsbPage/>} />
-              <Route path="/wsb/search" element={<WsbSearch />} />
-              <Route path="/wsb/search/:searchTerm" element={<WsbSearch />}/>
-              <Route path="/search" element={<SearchSingleStock/>}/>
-              <Route path="/search/:searchStockCode" element={<SearchSingleStock/>}/>
-              <Route path="/search/stock/:searchStockCode" element={<StockDetailScreen/>}/>
-            </Routes>
-          </CurrentUser>
-        </div>
-      </Provider>
+    <Provider store={store}>
+      <div className="container">
+        <CurrentUser>
+          <TopNavigationBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:uid" element={<OthersProfiles />} />
+            <Route path="/other" element={<OthersProfiles />} />
+            <Route path="/users" element={<AdminControlledUserList />} />
+            <Route path="/register" element={<RegisterMainPage />} />
+            <Route path="/register/bronze" element={<BronzeRegister />} />
+            <Route path="/register/gold" element={<GoldRegister />} />
+            <Route path="/register/admin" element={<AdminRegister />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="edit-profile" element={<EditProfileComponent />} />
+            <Route path="/wsb" element={<WsbPage />} />
+            <Route path="/wsb/search" element={<WsbSearch />} />
+            <Route path="/wsb/search/:searchTerm" element={<WsbSearch />} />
+            <Route path="/search" element={<SearchSingleStock />} />
+            <Route path="/search/:searchStockCode" element={<SearchSingleStock />} />
+            <Route path="/search/stock/:searchStockCode" element={<StockDetailScreen />} />
+          </Routes>
+        </CurrentUser>
+      </div>
+    </Provider>
   );
 }
 
